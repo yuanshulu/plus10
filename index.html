@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"></link>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"></link>
+  <style>
+    /* 這段是模擬官網的框架 可以不用複製*/
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-size: 0;
+    }
+    img {
+      width: 100%;
+    }
+    body {
+      font-size: 16px;
+      font-family: 'Heebo', 'Noto Sans JP', 'Noto Sans TC', 'Microsoft JhengHei', sans-serif;
+      letter-spacing: .2em;
+      line-height: 1.9;
+      font-weight: 500;
+      padding-bottom: 433px;
+    }
+    .container {
+      margin-top: 60px;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .row {
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+    .col-md-10, .col-md-12{
+      position: relative;
+      min-height: 1px;
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+    @media (min-width: 768px) {
+      .container{
+        margin-top: 250px;
+        width: 750px;
+      }
+    }
+    @media (min-width: 992px) {
+      .container {
+        width: 970px;
+      }
+      .col-md-10 {
+        width: 83.33333333%;
+        /* float: left; */
+      }
+      .col-md-12 {
+        width: 100%;
+      }
+      .col-md-offset-0 {
+        margin-left: 0;
+      }
+      .col-md-offset-1 {
+        margin-left: 8.33333333%;
+      }
+    }
+    @media (min-width: 1200px) {
+      .container {
+        width: 1170px;
+      }
+    }
+  </style>
+  <!-- 以下全部複製貼上 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <style>
+    .ball-wrap {
+      width: 13.97%;
+      filter: contrast(4);
+      position: absolute;
+      top: 12%;
+      left: 56.5%;
+      z-index: 10;
+      font-size: 0;
+      letter-spacing: 0;
+      mix-blend-mode: multiply;
+      max-width: 132px;
+    }
+    .ball.r {
+      background-color: #ff0000;
+    }
+    .ball.b {
+      margin-left: -25%;
+      background-color: #00ffff;
+    }
+    .ball {
+      mix-blend-mode: multiply;
+      display: inline-block;
+      border-radius: 100%;
+      width: 50%;
+      padding-bottom: 50%;
+    }
+    .logo {
+      padding-bottom:70px;
+    }
+    .logo-image {
+      position: relative;
+      padding-bottom: 18.3%;
+      background-image: url("./assets/logo.png");
+      background-size: cover;
+    }
+    .intro-section {
+      position: relative;
+      padding-bottom: 28.9%;
+    }
+    .glasses {
+      position: absolute;
+      right: 0;
+      width: 36px;
+    }
+    .intro-content {
+      position: relative;
+      padding: 22px 6.9% 0 4.6%;
+      overflow: hidden;
+    }
+    .intro-text .title{
+      width: 27.5%;
+    }
+    .intro-text {
+      position: absolute;
+      top: 21.7%;
+      left: 21.9%;
+    }
+    .intro-text .detail{
+      width: 75.4%;
+      letter-spacing: 1px;
+      line-height: 18px;
+      padding-top: 10px;
+      text-align: justify;
+      font-size: 12px;
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+    .music {
+      width: 16px;
+      position: absolute;
+      cursor: pointer;
+      right: 0;
+    }
+    .music .music-on {
+      display: none;
+    }
+    .music.playing .music-on {
+      display: block;
+    }
+    .music.playing .music-off {
+      display: none;
+    }
+    .music-player {
+      display: none;
+    }
+    #music1 {
+      top: 16.4%;
+    }
+    .box1-section {
+      position: relative;
+      padding-bottom: 28.7%;
+    }
+    .box-container {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+    .prev, .next{
+      flex-grow: 0;
+      flex-shrink: 0;
+      width: 7%;
+      cursor: pointer;
+    }
+    .box{
+      width: 80%;
+      flex-grow: 0;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .box .carosel {
+      position: absolute;
+      width: 78.3%;
+      top: 15.2%;
+      left: 15%;
+      z-index: -1;
+    }
+    .box2-section {
+      padding-bottom: 25.5%;
+    }
+    .box2-section .box-container{
+      justify-content: flex-end;
+      margin-left: auto;
+    }
+    #music2 {
+      top:9.8%;
+    }
+    #music3 {
+      top:6.8%;
+    }
+    #music4 {
+      top:38.2%
+    }
+    .micro-section {
+      position: relative;
+    }
+    .micro {
+      position: relative;
+    }
+    .micro.x10 {
+      padding: 22px 0 0 0;
+    }
+    .micro .micro-pic {
+      width: 93%;
+      margin-top: -11px;
+      position: relative;
+      z-index: 0;
+    }
+    .micro .micro-text {
+      position: relative;
+      z-index: 1;
+      width: 53.4%;
+    }
+    .x10 .micro-pic{
+      padding-bottom: 13.1%;
+    }
+    .x50 .micro-pic{
+      padding-bottom: 14.5%;
+    }
+    .x100 .micro-pic{
+      padding-bottom: 16.8%;
+    }
+    .dark-section {
+      position: relative;
+      margin: 0 -15px;
+      padding: 20px 15px 72px 15px;
+      background-color: #000;
+    }
+    .scroll-box {
+      width: 83.8%;
+      padding-bottom: 12.4%;
+      background-image: url('./assets//scroll-frame.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+    .scroll-text {
+      width: 91.3%;
+      margin: auto;
+      overflow-x: hidden;
+      position: relative;
+    }
+    .scroll-text .text {
+      position: relative;
+      display: inline-block;
+      font-size: 13px;
+      color: #fff;
+      font-family: 'Noto Sans TC', sans-serif;
+      padding: 4.2% 0 8% 0;
+      white-space: nowrap;
+      animation: marquee 20s linear infinite;
+    }
+    @keyframes marquee {
+      0% {
+        left: 0;
+      }
+      100% {
+        left: -628.3px;
+      }
+    }
+    .plant-box {
+      width: 83.2%;
+      margin: 0 10% 0 7%;
+      padding-bottom: 11.6%;
+    }
+    .model-box {
+      width: 83.5%;
+      margin: 0 9.3% 0 7.3%;
+      padding-bottom: 5.5%;
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 6px;
+    }
+    .item-text {
+      width: 87.3%;
+    }
+    .item-text .sm {
+      display: block;
+    }
+    .item-text .md {
+      display: none;
+    }
+    .item-buy {
+      display: inline-block;
+      background-color: #fff;
+      border-radius: 100%;
+      letter-spacing: 1px;
+      padding: 1px;
+      width: 24px;
+      height: 24px;
+    }
+    .item-buy-text {
+      font-size: 12px;
+      color: #000;
+      transform: scale(0.7);
+      display: inline-block;
+    }
+    .slide-section {
+      position: relative;
+      padding: 62px 0 205px 0;
+    }
+    .slide-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .slide {
+      width: 83.5%;
+      position: relative;
+    }
+    .slides {
+      position: absolute;
+      top: 10px;
+      padding: 0 2%;
+    }
+    .bottom-section {
+      position: relative;
+      padding: 0 0 43px 0;
+    }
+    .logo-wrap {
+      position: relative;
+      padding-top: 53px;
+      padding-right: 13.6%;
+      display: flex;
+    }
+    .logo-bottom {
+      position: relative;
+    }
+    #music5 {
+      top: 43%;
+    }
+    .blank-for-mobile-scroll {
+      height: 21vh;
+    }
+  </style>
+  <style>
+    @media (min-width: 768px) {
+      .logo {
+        padding-bottom:20.9%;
+      }
+      .glasses {
+        width: 7.8%;
+      }
+      .intro-section {
+        padding-bottom: 44.9%;
+      }
+      .intro-content {
+        padding: 25px 10.1% 0 19.2%;
+      }
+      .intro-text {
+        top: 22.8%;
+        left: 37.2%;
+      }
+      .intro-text .title {
+        width: 28.9%;
+      }
+      .intro-text .detail {
+        width: 67.4%;
+        font-size: 16px;
+        padding-top: 25px;
+        letter-spacing: .2em;
+        line-height: 24px;
+      }
+      .music {
+        width: 3.6%;
+      }
+      #music1 {
+        top: 14.4%;
+      }
+      .box1-section {
+        padding-bottom: 25.5%;
+      }
+      .box2-section {
+        padding-bottom: 37.7%;
+      }
+      #music2 {
+        top:10.8%;
+      }
+      .box {
+        width: 71%;
+      }
+      .micro-section {
+        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
+      }
+      .micro {
+        width: 49.6%;
+      }
+      .micro.x10 {
+        padding: 25px 0 0 0;
+      }
+      .micro.x50 {
+        align-self: center;
+      }
+      .micro.x100 {
+        align-self: flex-end;
+      }
+      .micro.x10 .micro-pic {
+        padding-bottom: 20.3%;
+      }
+      .micro.x50 .micro-pic {
+        padding-bottom: 22%;
+      }
+      .micro.x100 .micro-pic {
+        padding-bottom: 28.8%;
+      }
+      .micro .micro-pic {
+        width: 100%;
+      }
+      .micro .micro-text {
+        position: relative;
+        z-index: 1;
+        width: 53.4%;
+      }
+      .dark-section {
+        margin: 0;
+        padding: 5.8% 0 25.3% 0;
+      }
+      .scroll-box {
+        width: 73.43%;
+        padding-bottom: 0;
+        margin: 0 24% 0 2.64%;
+      }
+      .scroll-text .text {
+        font-size: 30px;
+        padding: 4% 0 6% 0;
+      }
+      @keyframes marquee {
+        0% {
+          left: 0;
+        }
+        100% {
+          left: -1265.81px;
+        }
+      }
+      .plant-box {
+        width: 82.7%;
+        margin: 14.1% 10.4% 0 7% ;
+      }
+      .model-box {
+        width: 83.1%;
+        margin: 0 9.7% 0 7.4%;
+        padding-bottom: 2.4%;
+      }
+      .menu {
+        padding-right: 3.6%;
+      }
+      .item {
+        justify-content: flex-end;
+        padding-bottom: 16px;
+      }
+      .item-text {
+        width: 46.4%;
+        margin-right: 30px;
+      }
+      .item-text .sm {
+        display: none;
+      }
+      .item-text .md {
+        display: block;
+      }
+      .item-buy {
+        letter-spacing: 2px;
+        padding: 22px 10px 21px 8px;
+        width: 64px;
+        height: 64px;
+      }
+      .item-buy-text {
+        transform: scale(1);
+        line-height: 1;
+        font-size: 21px;
+        letter-spacing: 5px;
+      }
+      .item-buy:hover {
+        border: solid 2px #fff;
+        background-color: #000;
+        padding: 20px 8px 19px 6px;
+      }
+      .item-buy:hover .item-buy-text {
+        color: #fff;
+      }
+      .bottom-section {
+        padding: 0 0 16.1% 0;
+      }
+      .slide-section {
+        padding: 19% 0 62.2% 0;
+      }
+      .slide-container {
+        justify-content: center;
+      }
+      .slide {
+        width: 78.3%;
+        margin: 0 7px;
+      }
+      .logo-wrap {
+        padding-top: 55px;
+        padding-right: 14.3%;
+      }
+      .logo-wrap div {
+        width: 50%;
+      }
+      #music5 {
+        top: 23.9%;
+      }
+      .blank-for-mobile-scroll {
+        height: 0;
+      }
+    }
+    @media (min-width: 992px) {
+      .intro-text {
+        top: 30.8%;
+        left: 37.2%;
+      }
+    }
+  </style>
+  <style>
+    /* ball-point是用來定位球的移動路徑的 */
+    .ball-point {
+      width: 36px;
+      height: 24px;
+      position: absolute;
+      /* background-color: red; */
+      z-index: 100;
+    }
+    #point1 {
+      left: 56%;
+      top: 3%;
+    }
+    #point2 {
+      top: 20.5%;
+    }
+    #point2-sub {
+      top: 60.5%;
+      left: 5%;
+    }
+    #point3 {
+      bottom: -7%;
+      left: 43%;
+    }
+    #point4 {
+      top: -4%;
+      left: 44%;
+    }
+    #point4-sub {
+      top: -4%;
+      left: 64%;
+    }
+    #point5 {
+      right: 4%;
+      top: 7%;
+    }
+    #point6 {
+      right: 4%;
+      top: 72%;
+    }
+    #point7 {
+      right: 4%;
+      top: 98%;
+    }
+    #point8 {
+      top: -4%;
+      left: 60%;
+    }
+    #point9 {
+      top: -4%;
+      left: 6%;
+    }
+    #point10 {
+      top: 83%;
+      left: 4%;
+    }
+    #point11 {
+      top: 100%;
+      left: 11%;
+    }
+    #point12 {
+      left: 50%;
+      top: 17%;
+    }
+    #point12-sub {
+      left: 78%;
+      top: 26%;
+    }
+    #point13 {
+      left: 90%;
+      top: 52%;
+    }
+    #point14 {
+      top: 26%;
+      left: 82%;
+    }
+    #point14-sub {
+      top: 50%;
+      left: 90%;
+    }
+    #point15 {
+      left: 87%;
+      top: 28%;
+    }
+    #point15-sub {
+      left: 90%;
+      top: 50%;
+    }
+    #point16 {
+      top: 70%;
+      left: 80%;
+    }
+    #point17 {
+      right: 2%;
+      top: 0;
+    }
+    #point18 {
+      right: 2%;
+      bottom: 0;
+    }
+    #point19 {
+      top: 0;
+      left: 92%;
+    }
+    #point20 {
+      left: 92%;
+      top: 50%;
+    }
+    #point21 {
+      top: 70%;
+      left: -4%;
+    }
+    #point22 {
+      top: 90%;
+      left: 15%;
+    }
+    #point23 {
+      left: 56.5%;
+      top: 14%;
+    }
+  </style>
+  <style>
+    @media (min-width: 768px) {
+      .ball-point {
+        width: 99px;
+        height: 66px;
+      }
+      #point1 {
+        top: -1%;
+      }
+      #point2 {
+        top: 10%;
+        left: 15%;
+      }
+      #point2-sub {
+        top: 44.5%;
+        left: 14%;
+      }
+      #point3 {
+        bottom: -10%;
+        left: 45%;
+      }
+      #point4 {
+        top: -5%;
+        left: 41%;
+      }
+      #point4-sub {
+        top: -5%;
+        left: 57%;
+      }
+      #point5 {
+        right: 13%;
+      }
+      #point6 {
+        right: 13%;
+      }
+      #point7 {
+        right: 13%;
+      }
+      #point8 {
+        top: -5%;
+        left: 63%;
+      }
+      #point9 {
+        top: -5%;
+        left: 15%;
+      }
+      #point10 {
+        left: 13%;
+      }
+      #point11 {
+        left: 20%;
+      }
+      #point12 {
+        top: 10%;
+      }
+      #point12-sub {
+        left: 87%;
+        top: 24%;
+      }
+      #point13 {
+        left: 93%;
+        top: 40%;
+      }
+      #point14 {
+        top: 10%;
+        left: 66%;
+      }
+      #point14-sub {
+        top: 37%;
+        left: 100%;
+      }
+      #point15 {
+        left: 75%;
+        top: 10%;
+      }
+      #point15-sub {
+        left: 100%;
+        top: 40%;
+      }
+      #point16 {
+        top: 70%;
+        left: 80%;
+      }
+      #point17 {
+        right: 0;
+      }
+      #point18 {
+        right: 0;
+      }
+      #point19 {
+        left: 89.6%;
+      }
+      #point20 {
+        left: 89.6%;
+        top: 50%;
+      }
+    }
+  </style>
+</head>
+<!-- 以下src的部分是圖片或音樂的路徑，要替換成正確的位置 -->
+<body>
+  <div class="container series">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        <section class="html">
+          <div class="row">
+            <div class="col-md-offset-0 col-md-12">
+              <div class="logo">
+                <div class="logo-image">
+                  <div id="ball" class="ball-wrap">
+                    <div class="r ball"></div>
+                    <div class="b ball"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="intro-section">
+                <div id="point1" class="ball-point"></div>
+                <div id="point2" class="ball-point"></div>
+                <div id="point2-sub" class="ball-point"></div>
+                <div class="glasses">
+                  <img src="./assets/glasses.png" alt="3D眼鏡">
+                </div>
+                <div class="intro-content">
+                  <div id="point3" class="ball-point"></div>
+                  <img src="./assets/intro-circle.png">
+                  <div class="intro-text">
+                    <div class="title">
+                      <img src="./assets/intro-title.png" alt="micro-微尺度，巨煉金術。">
+                    </div>
+                    <div class="detail">
+                      耗費無聊的十億年，藻製造出第一顆氧氣泡泡離開海洋，進入大氣。沒有藻，海是一片充滿鐵的綠色水池，生命現在還是宇宙塵埃。梭羅曾說：「野性蘊藏著世界的保存。」微尺度的野性，把這顆行星理解、分解，往復煉製，沒有物質是孤立的，依照守恆，物物相關。
+                    </div>
+                  </div>
+                </div>
+                <div onclick="switchMusic(0)" id="music1" class="music">
+                  <img class="music-off" src="./assets/music1-off.png" alt="music1">
+                  <img class="music-on" src="./assets/music1-on.png" alt="music1">
+                  <audio class="music-player" loop src="./assets/music1.mp3"></audio>
+                </div>
+              </div>
+              <div class="box1-section">
+                <div class="box-container">
+                  <div id="point4" class="ball-point"></div>
+                  <div id="point4-sub" class="ball-point"></div>
+                  <div id="point5" class="ball-point"></div>
+                  <div id="point6" class="ball-point"></div>
+                  <div id="point7" class="ball-point"></div>
+                  <div class="prev box1-prev">
+                    <img src="./assets/btn-prev.png" alt="前一張">
+                  </div>
+                  <div class="box">
+                    <img src="./assets/box.png">
+                    <div class="carosel box1-carosel owl-carousel owl-theme">
+                      <!-- 這裡是就是輪播的地方，複製貼上就可以換了 -->
+                      <div><img src="./assets/box-item2-gif.png"></div>
+                      <div><img src="./assets/box-item1-gif.png"></div>
+                      <div><img src="./assets/box-item2-gif.png"></div>
+                    </div>
+                  </div>
+                  <div class="next box1-next">
+                    <img src="./assets/btn-next.png" alt="下一張">
+                  </div>
+                </div>
+                <div onclick="switchMusic(1)" id="music2" class="music">
+                  <img class="music-off" src="./assets/music2-off.png" alt="music2">
+                  <img class="music-on" src="./assets/music2-on.png" alt="music2">
+                  <audio class="music-player" loop src="./assets/music2.mp3"></audio>
+                </div>
+              </div>
+              <div class="box2-section">
+                <div class="box-container">
+                  <div id="point8" class="ball-point"></div>
+                  <div id="point9" class="ball-point"></div>
+                  <div id="point10" class="ball-point"></div>
+                  <div id="point11" class="ball-point"></div>
+                  <div class="prev box2-prev">
+                    <img src="./assets/btn-prev.png" alt="前一張">
+                  </div>
+                  <div class="box">
+                    <img src="./assets/box.png">
+                    <div class="carosel box2-carosel owl-carousel owl-theme">
+                      <!-- 這裡是就是輪播的地方，複製貼上就可以換了 -->
+                      <div><img src="./assets/box-item1-gif.png"></div>
+                      <div><img src="./assets/box-item2-gif.png"></div>
+                      <div><img src="./assets/box-item1-gif.png"></div>
+                    </div>
+                  </div>
+                  <div class="next box2-next">
+                    <img src="./assets/btn-next.png" alt="下一張">
+                  </div>
+                </div>
+              </div>
+              <div class="micro-section">
+                <div class="glasses">
+                  <img src="./assets/glasses.png" alt="3D眼鏡">
+                </div>
+                <div onclick="switchMusic(2)" id="music3" class="music">
+                  <img class="music-off" src="./assets//music3-off.png" alt="music3">
+                  <img class="music-on" src="./assets//music3-on.png" alt="music3">
+                  <audio class="music-player" loop src="./assets/music3.mp3"></audio>
+                </div>
+                <div onclick="switchMusic(3)" id="music4" class="music">
+                  <img class="music-off" src="./assets//music4-off.png" alt="music4">
+                  <img class="music-on" src="./assets//music4-on.png" alt="music4">
+                  <audio class="music-player" loop src="./assets/music4.mp3"></audio>
+                </div>
+                <div class="x10 micro">
+                  <div id="point12" class="ball-point"></div>
+                  <div id="point12-sub" class="ball-point"></div>
+                  <div id="point13" class="ball-point"></div>
+                  <div class="micro-text">
+                    <img src="./assets/micro10x-title-trans.png" alt="大傘藻">
+                  </div>
+                  <div class="micro-pic">
+                    <img src="./assets/micro10x-pic.png" alt="大傘藻">
+                  </div>
+                </div>
+                <div class="x50 micro">
+                  <div id="point14" class="ball-point"></div>
+                  <div id="point14-sub" class="ball-point"></div>
+                  <div class="micro-text">
+                    <img src="./assets/micro50x-title-trans.png" alt="蘚狀束藻">
+                  </div>
+                  <div class="micro-pic">
+                    <img src="./assets/micro50x-pic.png" alt="蘚狀束藻">
+                  </div>
+                </div>
+                <div class="x100 micro">
+                  <div id="point15" class="ball-point"></div>
+                  <div id="point15-sub" class="ball-point"></div>
+                  <div id="point16" class="ball-point"></div>
+                  <div class="micro-text">
+                    <img src="./assets/micro100x-title-trans.png" alt="頭髮菜">
+                  </div>
+                  <div class="micro-pic">
+                    <img src="./assets/micro100x-pic.png" alt="頭髮菜">
+                  </div>
+                </div>
+              </div>
+              <div class="dark-section">
+                <div id="point17" class="ball-point"></div>
+                <div id="point18" class="ball-point"></div>
+                <div class="scroll-box">
+                  <div class="scroll-text">
+                    <div class="text">梭羅曾說：「&ensp;&ensp;沒有物質是孤立的，&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;守恆物物相關&ensp;野性蘊藏著世界的保存&ensp;&ensp;&ensp;&ensp;梭羅曾說：「&ensp;&ensp;沒有物質是孤立的，&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;守恆物物相關&ensp;野性蘊藏著世界的保存</div>
+                  </div>
+                </div>
+                <div class="plant-box">
+                  <img src="./assets/plant-gif.png">
+                </div>
+                <div class="model-box">
+                  <img src="./assets/model-gif.png">
+                </div>
+                <div class="menu">
+                  <div class="item itemA">
+                    <div class="item-text">
+                      <img class="sm" src="./assets/itemA-m.png">
+                      <img class="md" src="./assets/itemA.png">
+                    </div>
+                    <a class="item-buy" target="_blank" href="#">
+                      <span class="item-buy-text">buy</span>
+                    </a>
+                  </div>
+                  <div class="item itemB">
+                    <div class="item-text">
+                      <img class="sm" src="./assets/itemB-m.png">
+                      <img class="md" src="./assets/itemB.png">
+                    </div>
+                    <a class="item-buy" target="_blank" href="#">
+                      <span class="item-buy-text">buy</span>
+                    </a>
+                  </div>
+                  <div class="item itemC">
+                    <div class="item-text">
+                      <img class="sm" src="./assets/itemC-m.png">
+                      <img class="md" src="./assets/itemC.png">
+                    </div>
+                    <a class="item-buy" target="_blank" href="#">
+                      <span class="item-buy-text">buy</span>
+                    </a>
+                  </div>
+                  <div class="item itemD">
+                    <div class="item-text">
+                      <img class="sm" src="./assets/itemD-m.png">
+                      <img class="md" src="./assets/itemD.png">
+                    </div>
+                    <a class="item-buy" target="_blank" href="#">
+                      <span class="item-buy-text">buy</span>
+                    </a>
+                  </div>
+                  <div class="item itemE">
+                    <div class="item-text">
+                      <img class="sm" src="./assets/itemE-m.png">
+                      <img class="md" src="./assets/itemE.png">
+                    </div>
+                    <a class="item-buy" target="_blank" href="#">
+                      <span class="item-buy-text">buy</span>
+                    </a>
+                  </div>
+                </div>
+                <audio class="music-player music" id="music6" loop src="./assets/music6.mp3"></audio>
+              </div>
+              <div class="slide-section">
+                <div id="point19" class="ball-point"></div>
+                <div id="point20" class="ball-point"></div>
+                <div id="point21" class="ball-point"></div>
+                <div id="point22" class="ball-point"></div>
+                <div class="slide-container">
+                  <div class="prev slides-prev">
+                    <img src="./assets/btn-prev.png" alt="前一張">
+                  </div>
+                  <div class="slide">
+                    <img src="./assets/slide-frame.png">
+                    <div class="slides owl-carousel owl-theme">
+                      <!-- 這裡是就是輪播的地方，複製貼上就可以換了 -->
+                      <img src="./assets/logo-m.png">
+                      <img src="./assets/sign-gif.png">
+                      <img src="./assets/logo-m.png">
+                    </div>
+                  </div>
+                  <div class="next slides-next">
+                    <img src="./assets/btn-next.png" alt="下一張">
+                  </div>
+                </div>
+              </div>
+              <div class="bottom-section">
+                <div class="glasses">
+                  <img src="./assets/glasses.png" alt="3D眼鏡">
+                </div>
+                <div class="logo-wrap">
+                  <div class="logo-bottom">
+                    <div id="point23" class="ball-point"></div>
+                    <img src="./assets/logo-m.png">
+                  </div>
+                  <div class="sign">
+                    <img src="./assets/sign-gif.png">
+                  </div>
+                </div>
+                <div onclick="switchMusic(5)" id="music5" class="music">
+                  <img class="music-off" src="./assets//music5-off.png" alt="music5">
+                  <img class="music-on" src="./assets//music5-on.png" alt="music5">
+                  <audio class="music-player" loop src="./assets/music5.mp3"></audio>
+                </div>
+              </div>
+              <div class="blank-for-mobile-scroll"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" integrity="sha512-HzAEuXwhLxwm/Jj+5ecdjzrRVrjuh2ZeIxyT1Ln37TO5pWNMnKBuU7cfd1wvRQ/k86w1oC174Yk1T7aRlBpIcA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js" integrity="sha512-A98SmLRZISk4eIxQBeCm8k0jAcwN3A3lBx4hr7baoMpV1VpxcxlZIhi5fJIZN50sQ5RlCzx8yV+Voy2cR6x0aA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  var playingIndex = -1
+  function switchMusic(index){
+    const player = $('.music-player')[index]
+    if(playingIndex === index) {
+      console.log('同一首暫停')
+      player.pause()
+      $(`.music:eq(${index})`).toggleClass('playing')
+      playingIndex = -1
+    } else if (playingIndex > -1) {
+      console.log('換歌')
+      $('.music-player')[playingIndex].pause()
+      $('.music-player')[playingIndex].currentTime = 0
+      $(`.music:eq(${playingIndex})`).toggleClass('playing')
+      player.play()
+      $(`.music:eq(${index})`).toggleClass('playing')
+      playingIndex = index
+    } else {
+      console.log('開始播放')
+      playingIndex = index
+      player.play()
+      $(`.music:eq(${index})`).toggleClass('playing')
+    }
+  }
+  function swithMusic6() {
+    let darkSectionOffset = $('.dark-section').offset()
+    let darkSectionHeight = $('.dark-section').height()
+    let scrollTop = $(document).scrollTop()
+    if(scrollTop < darkSectionOffset.top-50 || scrollTop > darkSectionOffset.top+darkSectionHeight) {
+      if (playingIndex !== 4) return
+      $('#music6').removeClass('playing')
+      $('#music6')[0].pause()
+      $('#music6')[0].currentTime = 0
+      playingIndex = -1
+    } else {
+      if (playingIndex !== 4) switchMusic(4)
+    }
+  }
+  function isMobile(){
+    if(window.navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
+      return true;
+    }else{
+      return false;
+    }
+  }
+  $(document).ready(function() {
+    initCarosel()
+    initScrollMagic() //註解掉這行就可以關閉球
+    if(isMobile()) {
+      $(document).on('touchstart', ()=> {
+        setTimeout(()=> {
+          swithMusic6()
+        }, 500)
+      })
+    } else {
+      $(document).scroll(()=> {
+        swithMusic6()
+      })
+    }
+  })
+
+  function initScrollMagic () {
+    // init controller
+    var controller = new ScrollMagic.Controller();
+    var timeline = new TimelineMax();
+    var posistion = getBallPoint();
+    // todo duration, TwennMax time 待調整
+    // .add(TweenMax.to(要動的物件, 執行時間(佔據捲軸滾多少), 要前往的目的地))
+    timeline
+            .add(TweenMax.to("#ball", 1, posistion[0])) //logo - intro
+            .add(TweenMax.to("#ball", 1, {bezier:{curviness:1.25,values:[posistion[1],posistion[2],posistion[3]]}}))
+            .add(TweenMax.to("#ball", 0.5, posistion[4]))//intro - box1
+            .add(TweenMax.to("#ball", 0.1, posistion[5])) //box1 - box1 corner1
+            .add(TweenMax.to("#ball", 0.4, posistion[6])) //box1 corner1 - box1 corner2
+            .add(TweenMax.to("#ball", 1, posistion[7])) //box1 corner2 - box1 btm
+            .add(TweenMax.to("#ball", 0.5, {bezier:[posistion[8],posistion[9]]})) //box1 btm - box2 corner1
+            .add(TweenMax.to("#ball", 0.2, posistion[10])) //box2 corner1 - box2 corner2
+            .add(TweenMax.to("#ball", 1.5, posistion[11]))  //box2 corner2 - box2 corner3
+            .add(TweenMax.to("#ball", 0.3, posistion[12]))  //box2 corner3 - box2 corner4
+            .add(TweenMax.to("#ball", 0.3, posistion[13]))  //box2 corner4 - 10x top
+            .add(TweenMax.to("#ball", 0.5, {bezier:[posistion[14],posistion[15]]})) //10x top - 10x mid
+            .add(TweenMax.to("#ball", 0.7, posistion[16])) //10x mid - 50x top
+            .add(TweenMax.to("#ball", 1, {bezier:[posistion[17],posistion[18]]})) //50x top - 100x top
+            .add(TweenMax.to("#ball", 0.5, {bezier:{curviness:1.25,values:[posistion[19],posistion[20]]}})) //100x top - 100x btm
+            .add(TweenMax.to("#ball", 0.5, posistion[21])) //100x btm - dark top 要將#ball跟.ball的mix-blend-mode改為screen,兩顆球顏色互換
+            .add(TweenMax.to("#ball", 2.5, posistion[22])) //dark top - dark btm
+            .add(TweenMax.to("#ball", 0.5, posistion[23])) //dark btm - slide top 要將#ball跟.ball的mix-blend-mode改為multiply,兩顆球顏色互換
+            .add(TweenMax.to("#ball", 0.5, posistion[24])) //slide top - slide btm
+            .add(TweenMax.to("#ball", 0.5, posistion[25])) //slide btm - blank mid1
+            .add(TweenMax.to("#ball", 0.5, posistion[26])) //blank mid1 - blank mid2
+            .add(TweenMax.to("#ball", 0.5, {x: posistion[27].x, y:posistion[27].y,width: '5.97%'})) //blank mid2 - logo btm 要加#ball縮小至跟底部logo一樣
+    // create a scene
+    new ScrollMagic.Scene({
+      duration: posistion[27].y, // the scene should last for a scroll distance of 100px
+      offset: 0 // start this scene after scrolling for 50px
+    })
+      .setTween(timeline)
+      .addTo(controller); // assign the scene to the controller
+  }
+  function initCarosel () {
+    let option = {
+      items:1,
+      autoplay:true,
+      loop:true,
+      dots: false,
+    }
+    var box1Carosel = $(".box1-carosel").owlCarousel(option);
+    $('.box1-next').click(function() {
+      box1Carosel.trigger('next.owl.carousel');
+    })
+    $('.box1-prev').click(function() {
+      box1Carosel.trigger('prev.owl.carousel');
+    })
+
+    var box2Carosel = $(".box2-carosel").owlCarousel(option);
+    $('.box2-next').click(function() {
+      box2Carosel.trigger('next.owl.carousel');
+    })
+    $('.box2-prev').click(function() {
+      box2Carosel.trigger('prev.owl.carousel');
+    })
+
+    var slides = $(".slides").owlCarousel(option);
+    $('.slides-next').click(function() {
+      slides.trigger('next.owl.carousel');
+    })
+    $('.slides-prev').click(function() {
+      slides.trigger('prev.owl.carousel');
+    })
+  }
+  function getBallPoint () {
+    let ball = $('#ball').offset()
+    let point1 = $('#point1').offset()
+    let point2 = $('#point2').offset()
+    let point2sub = $('#point2-sub').offset()
+    let point3 = $('#point3').offset()
+    let point4 = $('#point4').offset()
+    let point4sub = $('#point4-sub').offset()
+    let point5 = $('#point5').offset()
+    let point6 = $('#point6').offset()
+    let point7 = $('#point7').offset()
+    let point8 = $('#point8').offset()
+    let point9 = $('#point9').offset()
+    let point10 = $('#point10').offset()
+    let point11 = $('#point11').offset()
+    let point12 = $('#point12').offset()
+    let point12sub = $('#point12-sub').offset()
+    let point13 = $('#point13').offset()
+    let point14 = $('#point14').offset()
+    let point14sub = $('#point14-sub').offset()
+    let point15 = $('#point15').offset()
+    let point15sub = $('#point15-sub').offset()
+    let point16 = $('#point16').offset()
+    let point17 = $('#point17').offset()
+    let point18 = $('#point18').offset()
+    let point19 = $('#point19').offset()
+    let point20 = $('#point20').offset()
+    let point21 = $('#point21').offset()
+    let point22 = $('#point22').offset()
+    let point23 = $('#point23').offset()
+    return [
+      {x: point1.left - ball.left ,y: point1.top - ball.top},//0
+      {x: point2.left - ball.left ,y: point2.top - ball.top},//1
+      {x: point2sub.left - ball.left ,y: point2sub.top - ball.top},//2
+      {x: point3.left - ball.left ,y: point3.top - ball.top},//3
+      {x: point4.left - ball.left ,y: point4.top - ball.top},//4
+      {x: point4sub.left - ball.left ,y: point4sub.top - ball.top},//5
+      {x: point5.left - ball.left ,y: point5.top - ball.top},//6
+      {x: point6.left - ball.left ,y: point6.top - ball.top},//7
+      {x: point7.left - ball.left ,y: point7.top - ball.top},//8
+      {x: point8.left - ball.left ,y: point8.top - ball.top},//9
+      {x: point9.left - ball.left ,y: point9.top - ball.top},//10
+      {x: point10.left - ball.left ,y: point10.top - ball.top},//11
+      {x: point11.left - ball.left ,y: point11.top - ball.top},//12
+      {x: point12.left - ball.left ,y: point12.top - ball.top},//13
+      {x: point12sub.left - ball.left ,y: point12sub.top - ball.top},//14
+      {x: point13.left - ball.left ,y: point13.top - ball.top},//15
+      {x: point14.left - ball.left ,y: point14.top - ball.top},//16
+      {x: point14sub.left - ball.left ,y: point14sub.top - ball.top},//17
+      {x: point15.left - ball.left ,y: point15.top - ball.top},//18
+      {x: point15sub.left - ball.left ,y: point15sub.top - ball.top},//19
+      {x: point16.left - ball.left ,y: point16.top - ball.top},//20
+      {x: point17.left - ball.left ,y: point17.top - ball.top},//21
+      {x: point18.left - ball.left ,y: point18.top - ball.top},//22
+      {x: point19.left - ball.left ,y: point19.top - ball.top},//23
+      {x: point20.left - ball.left ,y: point20.top - ball.top},//24
+      {x: point21.left - ball.left ,y: point21.top - ball.top},//25
+      {x: point22.left - ball.left ,y: point22.top - ball.top},//26
+      {x: point23.left - ball.left ,y: point23.top - ball.top},//27
+    ]
+  }
+</script>
+</html>
