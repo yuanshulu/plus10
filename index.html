@@ -337,6 +337,7 @@
       position: absolute;
       top: 10px;
       padding: 0 2%;
+      z-index: -1;
     }
     .bottom-section {
       position: relative;
@@ -360,6 +361,10 @@
   </style>
   <style>
     @media (min-width: 768px) {
+      .max-wrap {
+        width: 600px;
+        margin: auto;
+      }
       .logo {
         padding-bottom:20.9%;
       }
@@ -381,7 +386,7 @@
       }
       .intro-text .detail {
         width: 67.4%;
-        font-size: 16px;
+        font-size: 12px;
         padding-top: 25px;
         letter-spacing: .2em;
         line-height: 24px;
@@ -448,7 +453,7 @@
         margin: 0 24% 0 2.64%;
       }
       .scroll-text .text {
-        font-size: 30px;
+        font-size: 24px;
         padding: 4% 0 6% 0;
       }
       @keyframes marquee {
@@ -487,20 +492,20 @@
       }
       .item-buy {
         letter-spacing: 2px;
-        padding: 22px 10px 21px 8px;
-        width: 64px;
-        height: 64px;
+        padding: 11px 5px 10.5px 4px;
+        width: 32px;
+        height: 32px;
       }
       .item-buy-text {
         transform: scale(1);
         line-height: 1;
-        font-size: 21px;
-        letter-spacing: 5px;
+        font-size: 13px;
+        letter-spacing: 1px;
       }
       .item-buy:hover {
         border: solid 2px #fff;
         background-color: #000;
-        padding: 20px 8px 19px 6px;
+        padding: 10px 4px 9.5px 3px;
       }
       .item-buy:hover .item-buy-text {
         color: #fff;
@@ -631,6 +636,10 @@
       top: 70%;
       left: 80%;
     }
+    #point16-sub {
+      top: 97%;
+      left: 94%;
+    }
     #point17 {
       right: 2%;
       top: 0;
@@ -663,8 +672,8 @@
   <style>
     @media (min-width: 768px) {
       .ball-point {
-        width: 99px;
-        height: 66px;
+        width: 62.865px;
+        height: 41.91px;
       }
       #point1 {
         top: -1%;
@@ -743,6 +752,10 @@
         top: 70%;
         left: 80%;
       }
+      #point16-sub {
+        top: 91%;
+        left: 80%;
+      }
       #point17 {
         right: 0;
       }
@@ -767,244 +780,246 @@
         <section class="html">
           <div class="row">
             <div class="col-md-offset-0 col-md-12">
-              <div class="logo">
-                <div class="logo-image">
-                  <div id="ball" class="ball-wrap">
-                    <div class="r ball"></div>
-                    <div class="b ball"></div>
+              <div class="max-wrap">
+                <div class="logo">
+                  <div class="logo-image">
+                    <div id="ball" class="ball-wrap">
+                      <div class="r ball"></div>
+                      <div class="b ball"></div>
+                    </div>
                   </div>
                 </div>
+                <div class="intro-section">
+                  <div id="point1" class="ball-point"></div>
+                  <div id="point2" class="ball-point"></div>
+                  <div id="point2-sub" class="ball-point"></div>
+                  <div class="glasses">
+                    <img src="./assets/glasses.png" alt="3D眼鏡">
+                  </div>
+                  <div class="intro-content">
+                    <div id="point3" class="ball-point"></div>
+                    <img class="img" src="./assets/intro-circle.png">
+                    <div class="intro-text">
+                      <div class="title">
+                        <img class="img" src="./assets/intro-title.png" alt="micro-微尺度，巨煉金術。">
+                      </div>
+                      <div class="detail">
+                        耗費無聊的十億年，藻製造出第一顆氧氣泡泡離開海洋，進入大氣。沒有藻，海是一片充滿鐵的綠色水池，生命現在還是宇宙塵埃。梭羅曾說：「野性蘊藏著世界的保存。」微尺度的野性，把這顆行星理解、分解，往復煉製，沒有物質是孤立的，依照守恆，物物相關。
+                      </div>
+                    </div>
+                  </div>
+                  <div onclick="switchMusic(0)" id="music1" class="music">
+                    <img class="music-off" src="./assets/music1-off.png" alt="music1">
+                    <img class="music-on" src="./assets/music1-on.png" alt="music1">
+                    <audio class="music-player" loop src="./assets/music1.mp3"></audio>
+                  </div>
+                </div>
+                <div class="box1-section">
+                  <div class="box-container">
+                    <div id="point4" class="ball-point"></div>
+                    <div id="point4-sub" class="ball-point"></div>
+                    <div id="point5" class="ball-point"></div>
+                    <div id="point6" class="ball-point"></div>
+                    <div id="point7" class="ball-point"></div>
+                    <div class="prev box1-prev">
+                      <img src="./assets/btn-prev.png" alt="前一張">
+                    </div>
+                    <div class="box">
+                      <img class="img" src="./assets/box.png">
+                      <div class="carosel box1-carosel owl-carousel owl-theme">
+                        <!-- 這裡是就是輪播的地方，複製貼上就可以換了 -->
+                        <div><img src="./assets/box1-item1.gif"></div>
+                        <div><img src="./assets/box1-item2.gif"></div>
+                        <div><img src="./assets/box1-item3.gif"></div>
+                      </div>
+                    </div>
+                    <div class="next box1-next">
+                      <img src="./assets/btn-next.png" alt="下一張">
+                    </div>
+                  </div>
+                  <div onclick="switchMusic(1)" id="music2" class="music">
+                    <img class="music-off" src="./assets/music2-off.png" alt="music2">
+                    <img class="music-on" src="./assets/music2-on.png" alt="music2">
+                    <audio class="music-player" loop src="./assets/music2.mp3"></audio>
+                  </div>
+                </div>
+                <div class="box2-section">
+                  <div class="box-container">
+                    <div id="point8" class="ball-point"></div>
+                    <div id="point9" class="ball-point"></div>
+                    <div id="point10" class="ball-point"></div>
+                    <div id="point11" class="ball-point"></div>
+                    <div class="prev box2-prev">
+                      <img src="./assets/btn-prev.png" alt="前一張">
+                    </div>
+                    <div class="box">
+                      <img class="img" src="./assets/box.png">
+                      <div class="carosel box2-carosel owl-carousel owl-theme">
+                        <!-- 這裡是就是輪播的地方，複製貼上就可以換了 -->
+                        <div><img src="./assets/box2-item1.gif"></div>
+                        <div><img src="./assets/box2-item2.gif"></div>
+                      </div>
+                    </div>
+                    <div class="next box2-next">
+                      <img src="./assets/btn-next.png" alt="下一張">
+                    </div>
+                  </div>
+                </div>
+                <div class="micro-section">
+                  <div class="glasses">
+                    <img src="./assets/glasses.png" alt="3D眼鏡">
+                  </div>
+                  <div onclick="switchMusic(2)" id="music3" class="music">
+                    <img class="music-off" src="./assets//music3-off.png" alt="music3">
+                    <img class="music-on" src="./assets//music3-on.png" alt="music3">
+                    <audio class="music-player" loop src="./assets/music3.mp3"></audio>
+                  </div>
+                  <div onclick="switchMusic(3)" id="music4" class="music">
+                    <img class="music-off" src="./assets//music4-off.png" alt="music4">
+                    <img class="music-on" src="./assets//music4-on.png" alt="music4">
+                    <audio class="music-player" loop src="./assets/music4.mp3"></audio>
+                  </div>
+                  <div class="x10 micro">
+                    <div id="point12" class="ball-point"></div>
+                    <div id="point12-sub" class="ball-point"></div>
+                    <div id="point13" class="ball-point"></div>
+                    <div class="micro-text">
+                      <img class="img" src="./assets/micro10x-title-trans.png" alt="大傘藻">
+                    </div>
+                    <div class="micro-pic">
+                      <img class="img" src="./assets/micro10x-pic.gif" alt="大傘藻">
+                    </div>
+                  </div>
+                  <div class="x50 micro">
+                    <div id="point14" class="ball-point"></div>
+                    <div id="point14-sub" class="ball-point"></div>
+                    <div class="micro-text">
+                      <img class="img" src="./assets/micro50x-title-trans.png" alt="蘚狀束藻">
+                    </div>
+                    <div class="micro-pic">
+                      <img class="img" src="./assets/micro50x-pic.png" alt="蘚狀束藻">
+                    </div>
+                  </div>
+                  <div class="x100 micro">
+                    <div id="point15" class="ball-point"></div>
+                    <div id="point15-sub" class="ball-point"></div>
+                    <div id="point16" class="ball-point"></div>
+                    <div id="point16-sub" class="ball-point"></div>
+                    <div class="micro-text">
+                      <img class="img" src="./assets/micro100x-title-trans.png" alt="頭髮菜">
+                    </div>
+                    <div class="micro-pic">
+                      <img class="img" src="./assets/micro100x-pic.png" alt="頭髮菜">
+                    </div>
+                  </div>
+                </div>
+                <div class="dark-section">
+                  <div id="point17" class="ball-point"></div>
+                  <div id="point18" class="ball-point"></div>
+                  <div class="scroll-box">
+                    <div class="scroll-text">
+                      <div class="text">梭羅曾說：「&ensp;&ensp;沒有物質是孤立的，&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;守恆物物相關&ensp;野性蘊藏著世界的保存&ensp;&ensp;&ensp;&ensp;梭羅曾說：「&ensp;&ensp;沒有物質是孤立的，&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;守恆物物相關&ensp;野性蘊藏著世界的保存</div>
+                    </div>
+                  </div>
+                  <div class="plant-box">
+                    <img class="img" src="./assets/plant.gif">
+                  </div>
+                  <div class="model-box">
+                    <img class="img" src="./assets/model.gif">
+                  </div>
+                  <div class="menu">
+                    <div class="item itemA">
+                      <div class="item-text">
+                        <img class="sm" src="./assets/itemA-m.png">
+                        <img class="md" src="./assets/itemA.png">
+                      </div>
+                      <a class="item-buy" target="_blank" href="#">
+                        <span class="item-buy-text">buy</span>
+                      </a>
+                    </div>
+                    <div class="item itemB">
+                      <div class="item-text">
+                        <img class="sm" src="./assets/itemB-m.png">
+                        <img class="md" src="./assets/itemB.png">
+                      </div>
+                      <a class="item-buy" target="_blank" href="#">
+                        <span class="item-buy-text">buy</span>
+                      </a>
+                    </div>
+                    <div class="item itemC">
+                      <div class="item-text">
+                        <img class="sm" src="./assets/itemC-m.png">
+                        <img class="md" src="./assets/itemC.png">
+                      </div>
+                      <a class="item-buy" target="_blank" href="#">
+                        <span class="item-buy-text">buy</span>
+                      </a>
+                    </div>
+                    <div class="item itemD">
+                      <div class="item-text">
+                        <img class="sm" src="./assets/itemD-m.png">
+                        <img class="md" src="./assets/itemD.png">
+                      </div>
+                      <a class="item-buy" target="_blank" href="#">
+                        <span class="item-buy-text">buy</span>
+                      </a>
+                    </div>
+                    <div class="item itemE">
+                      <div class="item-text">
+                        <img class="sm" src="./assets/itemE-m.png">
+                        <img class="md" src="./assets/itemE.png">
+                      </div>
+                      <a class="item-buy" target="_blank" href="#">
+                        <span class="item-buy-text">buy</span>
+                      </a>
+                    </div>
+                  </div>
+                  <audio class="music-player music" id="music6" loop src="./assets/music6.m4a"></audio>
+                </div>
+                <div class="slide-section">
+                  <div id="point19" class="ball-point"></div>
+                  <div id="point20" class="ball-point"></div>
+                  <div id="point21" class="ball-point"></div>
+                  <div id="point22" class="ball-point"></div>
+                  <div class="slide-container">
+                    <div class="prev slides-prev">
+                      <img src="./assets/btn-prev.png" alt="前一張">
+                    </div>
+                    <div class="slide">
+                      <img class="img" src="./assets/slide-frame.png">
+                      <div class="slides owl-carousel owl-theme">
+                        <!-- 這裡是就是輪播的地方，複製貼上就可以換了 -->
+                        <img src="./assets/logo-m.png">
+                        <img src="./assets/sign-gif.png">
+                        <img src="./assets/logo-m.png">
+                      </div>
+                    </div>
+                    <div class="next slides-next">
+                      <img src="./assets/btn-next.png" alt="下一張">
+                    </div>
+                  </div>
+                </div>
+                <div class="bottom-section">
+                  <div class="glasses">
+                    <img src="./assets/glasses.png" alt="3D眼鏡">
+                  </div>
+                  <div class="logo-wrap">
+                    <div class="logo-bottom">
+                      <div id="point23" class="ball-point"></div>
+                      <img class="img" src="./assets/logo-m.png">
+                    </div>
+                    <div class="sign">
+                      <img class="img" src="./assets/sign-gif.png">
+                    </div>
+                  </div>
+                  <div onclick="switchMusic(5)" id="music5" class="music">
+                    <img class="music-off" src="./assets//music5-off.png" alt="music5">
+                    <img class="music-on" src="./assets//music5-on.png" alt="music5">
+                    <audio class="music-player" loop src="./assets/music5.mp3"></audio>
+                  </div>
+                </div>
+                <div class="blank-for-mobile-scroll"></div>
               </div>
-              <div class="intro-section">
-                <div id="point1" class="ball-point"></div>
-                <div id="point2" class="ball-point"></div>
-                <div id="point2-sub" class="ball-point"></div>
-                <div class="glasses">
-                  <img src="./assets/glasses.png" alt="3D眼鏡">
-                </div>
-                <div class="intro-content">
-                  <div id="point3" class="ball-point"></div>
-                  <img src="./assets/intro-circle.png">
-                  <div class="intro-text">
-                    <div class="title">
-                      <img src="./assets/intro-title.png" alt="micro-微尺度，巨煉金術。">
-                    </div>
-                    <div class="detail">
-                      耗費無聊的十億年，藻製造出第一顆氧氣泡泡離開海洋，進入大氣。沒有藻，海是一片充滿鐵的綠色水池，生命現在還是宇宙塵埃。梭羅曾說：「野性蘊藏著世界的保存。」微尺度的野性，把這顆行星理解、分解，往復煉製，沒有物質是孤立的，依照守恆，物物相關。
-                    </div>
-                  </div>
-                </div>
-                <div onclick="switchMusic(0)" id="music1" class="music">
-                  <img class="music-off" src="./assets/music1-off.png" alt="music1">
-                  <img class="music-on" src="./assets/music1-on.png" alt="music1">
-                  <audio class="music-player" loop src="./assets/music1.mp3"></audio>
-                </div>
-              </div>
-              <div class="box1-section">
-                <div class="box-container">
-                  <div id="point4" class="ball-point"></div>
-                  <div id="point4-sub" class="ball-point"></div>
-                  <div id="point5" class="ball-point"></div>
-                  <div id="point6" class="ball-point"></div>
-                  <div id="point7" class="ball-point"></div>
-                  <div class="prev box1-prev">
-                    <img src="./assets/btn-prev.png" alt="前一張">
-                  </div>
-                  <div class="box">
-                    <img src="./assets/box.png">
-                    <div class="carosel box1-carosel owl-carousel owl-theme">
-                      <!-- 這裡是就是輪播的地方，複製貼上就可以換了 -->
-                      <div><img src="./assets/box-item2-gif.png"></div>
-                      <div><img src="./assets/box-item1-gif.png"></div>
-                      <div><img src="./assets/box-item2-gif.png"></div>
-                    </div>
-                  </div>
-                  <div class="next box1-next">
-                    <img src="./assets/btn-next.png" alt="下一張">
-                  </div>
-                </div>
-                <div onclick="switchMusic(1)" id="music2" class="music">
-                  <img class="music-off" src="./assets/music2-off.png" alt="music2">
-                  <img class="music-on" src="./assets/music2-on.png" alt="music2">
-                  <audio class="music-player" loop src="./assets/music2.mp3"></audio>
-                </div>
-              </div>
-              <div class="box2-section">
-                <div class="box-container">
-                  <div id="point8" class="ball-point"></div>
-                  <div id="point9" class="ball-point"></div>
-                  <div id="point10" class="ball-point"></div>
-                  <div id="point11" class="ball-point"></div>
-                  <div class="prev box2-prev">
-                    <img src="./assets/btn-prev.png" alt="前一張">
-                  </div>
-                  <div class="box">
-                    <img src="./assets/box.png">
-                    <div class="carosel box2-carosel owl-carousel owl-theme">
-                      <!-- 這裡是就是輪播的地方，複製貼上就可以換了 -->
-                      <div><img src="./assets/box-item1-gif.png"></div>
-                      <div><img src="./assets/box-item2-gif.png"></div>
-                      <div><img src="./assets/box-item1-gif.png"></div>
-                    </div>
-                  </div>
-                  <div class="next box2-next">
-                    <img src="./assets/btn-next.png" alt="下一張">
-                  </div>
-                </div>
-              </div>
-              <div class="micro-section">
-                <div class="glasses">
-                  <img src="./assets/glasses.png" alt="3D眼鏡">
-                </div>
-                <div onclick="switchMusic(2)" id="music3" class="music">
-                  <img class="music-off" src="./assets//music3-off.png" alt="music3">
-                  <img class="music-on" src="./assets//music3-on.png" alt="music3">
-                  <audio class="music-player" loop src="./assets/music3.mp3"></audio>
-                </div>
-                <div onclick="switchMusic(3)" id="music4" class="music">
-                  <img class="music-off" src="./assets//music4-off.png" alt="music4">
-                  <img class="music-on" src="./assets//music4-on.png" alt="music4">
-                  <audio class="music-player" loop src="./assets/music4.mp3"></audio>
-                </div>
-                <div class="x10 micro">
-                  <div id="point12" class="ball-point"></div>
-                  <div id="point12-sub" class="ball-point"></div>
-                  <div id="point13" class="ball-point"></div>
-                  <div class="micro-text">
-                    <img src="./assets/micro10x-title-trans.png" alt="大傘藻">
-                  </div>
-                  <div class="micro-pic">
-                    <img src="./assets/micro10x-pic.png" alt="大傘藻">
-                  </div>
-                </div>
-                <div class="x50 micro">
-                  <div id="point14" class="ball-point"></div>
-                  <div id="point14-sub" class="ball-point"></div>
-                  <div class="micro-text">
-                    <img src="./assets/micro50x-title-trans.png" alt="蘚狀束藻">
-                  </div>
-                  <div class="micro-pic">
-                    <img src="./assets/micro50x-pic.png" alt="蘚狀束藻">
-                  </div>
-                </div>
-                <div class="x100 micro">
-                  <div id="point15" class="ball-point"></div>
-                  <div id="point15-sub" class="ball-point"></div>
-                  <div id="point16" class="ball-point"></div>
-                  <div class="micro-text">
-                    <img src="./assets/micro100x-title-trans.png" alt="頭髮菜">
-                  </div>
-                  <div class="micro-pic">
-                    <img src="./assets/micro100x-pic.png" alt="頭髮菜">
-                  </div>
-                </div>
-              </div>
-              <div class="dark-section">
-                <div id="point17" class="ball-point"></div>
-                <div id="point18" class="ball-point"></div>
-                <div class="scroll-box">
-                  <div class="scroll-text">
-                    <div class="text">梭羅曾說：「&ensp;&ensp;沒有物質是孤立的，&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;守恆物物相關&ensp;野性蘊藏著世界的保存&ensp;&ensp;&ensp;&ensp;梭羅曾說：「&ensp;&ensp;沒有物質是孤立的，&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;守恆物物相關&ensp;野性蘊藏著世界的保存</div>
-                  </div>
-                </div>
-                <div class="plant-box">
-                  <img src="./assets/plant-gif.png">
-                </div>
-                <div class="model-box">
-                  <img src="./assets/model-gif.png">
-                </div>
-                <div class="menu">
-                  <div class="item itemA">
-                    <div class="item-text">
-                      <img class="sm" src="./assets/itemA-m.png">
-                      <img class="md" src="./assets/itemA.png">
-                    </div>
-                    <a class="item-buy" target="_blank" href="#">
-                      <span class="item-buy-text">buy</span>
-                    </a>
-                  </div>
-                  <div class="item itemB">
-                    <div class="item-text">
-                      <img class="sm" src="./assets/itemB-m.png">
-                      <img class="md" src="./assets/itemB.png">
-                    </div>
-                    <a class="item-buy" target="_blank" href="#">
-                      <span class="item-buy-text">buy</span>
-                    </a>
-                  </div>
-                  <div class="item itemC">
-                    <div class="item-text">
-                      <img class="sm" src="./assets/itemC-m.png">
-                      <img class="md" src="./assets/itemC.png">
-                    </div>
-                    <a class="item-buy" target="_blank" href="#">
-                      <span class="item-buy-text">buy</span>
-                    </a>
-                  </div>
-                  <div class="item itemD">
-                    <div class="item-text">
-                      <img class="sm" src="./assets/itemD-m.png">
-                      <img class="md" src="./assets/itemD.png">
-                    </div>
-                    <a class="item-buy" target="_blank" href="#">
-                      <span class="item-buy-text">buy</span>
-                    </a>
-                  </div>
-                  <div class="item itemE">
-                    <div class="item-text">
-                      <img class="sm" src="./assets/itemE-m.png">
-                      <img class="md" src="./assets/itemE.png">
-                    </div>
-                    <a class="item-buy" target="_blank" href="#">
-                      <span class="item-buy-text">buy</span>
-                    </a>
-                  </div>
-                </div>
-                <audio class="music-player music" id="music6" loop src="./assets/music6.mp3"></audio>
-              </div>
-              <div class="slide-section">
-                <div id="point19" class="ball-point"></div>
-                <div id="point20" class="ball-point"></div>
-                <div id="point21" class="ball-point"></div>
-                <div id="point22" class="ball-point"></div>
-                <div class="slide-container">
-                  <div class="prev slides-prev">
-                    <img src="./assets/btn-prev.png" alt="前一張">
-                  </div>
-                  <div class="slide">
-                    <img src="./assets/slide-frame.png">
-                    <div class="slides owl-carousel owl-theme">
-                      <!-- 這裡是就是輪播的地方，複製貼上就可以換了 -->
-                      <img src="./assets/logo-m.png">
-                      <img src="./assets/sign-gif.png">
-                      <img src="./assets/logo-m.png">
-                    </div>
-                  </div>
-                  <div class="next slides-next">
-                    <img src="./assets/btn-next.png" alt="下一張">
-                  </div>
-                </div>
-              </div>
-              <div class="bottom-section">
-                <div class="glasses">
-                  <img src="./assets/glasses.png" alt="3D眼鏡">
-                </div>
-                <div class="logo-wrap">
-                  <div class="logo-bottom">
-                    <div id="point23" class="ball-point"></div>
-                    <img src="./assets/logo-m.png">
-                  </div>
-                  <div class="sign">
-                    <img src="./assets/sign-gif.png">
-                  </div>
-                </div>
-                <div onclick="switchMusic(5)" id="music5" class="music">
-                  <img class="music-off" src="./assets//music5-off.png" alt="music5">
-                  <img class="music-on" src="./assets//music5-on.png" alt="music5">
-                  <audio class="music-player" loop src="./assets/music5.mp3"></audio>
-                </div>
-              </div>
-              <div class="blank-for-mobile-scroll"></div>
             </div>
           </div>
         </section>
@@ -1020,12 +1035,10 @@
   function switchMusic(index){
     const player = $('.music-player')[index]
     if(playingIndex === index) {
-      console.log('同一首暫停')
       player.pause()
       $(`.music:eq(${index})`).toggleClass('playing')
       playingIndex = -1
     } else if (playingIndex > -1) {
-      console.log('換歌')
       $('.music-player')[playingIndex].pause()
       $('.music-player')[playingIndex].currentTime = 0
       $(`.music:eq(${playingIndex})`).toggleClass('playing')
@@ -1033,7 +1046,6 @@
       $(`.music:eq(${index})`).toggleClass('playing')
       playingIndex = index
     } else {
-      console.log('開始播放')
       playingIndex = index
       player.play()
       $(`.music:eq(${index})`).toggleClass('playing')
@@ -1062,7 +1074,20 @@
   }
   $(document).ready(function() {
     initCarosel()
-    initScrollMagic() //註解掉這行就可以關閉球
+    const imgID = document.querySelectorAll('.img');
+    let i = 0;
+    imgID.forEach((item, index) => {
+      const img = new Image();
+      img.src = item.src;
+      
+      img.addEventListener("load", () => {
+        i += 1; // 讀取完畢就 + 1
+        if(imgID.length === i) { // 當圖片全部讀取完畢就顯示載入完成，這邊可以搭配 Loading 狀態切換畫面
+          console.log('圖片全部載入完成');
+          initScrollMagic() //註解掉這行就可以關閉球
+        }
+      });
+    })
     if(isMobile()) {
       $(document).on('touchstart', ()=> {
         setTimeout(()=> {
@@ -1099,13 +1124,16 @@
             .add(TweenMax.to("#ball", 0.7, posistion[16])) //10x mid - 50x top
             .add(TweenMax.to("#ball", 1, {bezier:[posistion[17],posistion[18]]})) //50x top - 100x top
             .add(TweenMax.to("#ball", 0.5, {bezier:{curviness:1.25,values:[posistion[19],posistion[20]]}})) //100x top - 100x btm
-            .add(TweenMax.to("#ball", 0.5, posistion[21])) //100x btm - dark top 要將#ball跟.ball的mix-blend-mode改為screen,兩顆球顏色互換
-            .add(TweenMax.to("#ball", 2.5, posistion[22])) //dark top - dark btm
-            .add(TweenMax.to("#ball", 0.5, posistion[23])) //dark btm - slide top 要將#ball跟.ball的mix-blend-mode改為multiply,兩顆球顏色互換
-            .add(TweenMax.to("#ball", 0.5, posistion[24])) //slide top - slide btm
-            .add(TweenMax.to("#ball", 0.5, posistion[25])) //slide btm - blank mid1
-            .add(TweenMax.to("#ball", 0.5, posistion[26])) //blank mid1 - blank mid2
-            .add(TweenMax.to("#ball", 0.5, {x: posistion[27].x, y:posistion[27].y,width: '5.97%'})) //blank mid2 - logo btm 要加#ball縮小至跟底部logo一樣
+            .add(TweenMax.to("#ball", 0.1, posistion[21])) //100x btm - dark toptop 
+            .add(TweenMax.to(".ball", 0.1, {'mix-blend-mode': 'screen'}))
+            .add(TweenMax.to("#ball", 0.5, {x: posistion[22].x, y:posistion[22].y,'mix-blend-mode': 'screen'})) //100x btm - dark top 要將#ball跟.ball的mix-blend-mode改為screen,兩顆球顏色互換
+            .add(TweenMax.to("#ball", 2, posistion[23])) //dark top - dark btm
+            .add(TweenMax.to("#ball", 0.5, {x: posistion[24].x, y:posistion[24].y})) //dark btm - slide top 要將#ball跟.ball的mix-blend-mode改為multiply,兩顆球顏色互換
+            .add(TweenMax.to(['#ball','.ball'], 0.1, {'mix-blend-mode': 'multiply'}))
+            .add(TweenMax.to("#ball", 0.5, posistion[25])) //slide top - slide btm
+            .add(TweenMax.to("#ball", 0.5, posistion[26])) //slide btm - blank mid1
+            .add(TweenMax.to("#ball", 0.5, posistion[27])) //blank mid1 - blank mid2
+            .add(TweenMax.to("#ball", 0.5, {x: posistion[28].x, y:posistion[27].y,width: '5.97%', opacity: '0'})) //blank mid2 - logo btm 要加#ball縮小至跟底部logo一樣
     // create a scene
     new ScrollMagic.Scene({
       duration: posistion[27].y, // the scene should last for a scroll distance of 100px
@@ -1120,6 +1148,7 @@
       autoplay:true,
       loop:true,
       dots: false,
+      autoplayTimeout: 7600,
     }
     var box1Carosel = $(".box1-carosel").owlCarousel(option);
     $('.box1-next').click(function() {
@@ -1168,6 +1197,7 @@
     let point15 = $('#point15').offset()
     let point15sub = $('#point15-sub').offset()
     let point16 = $('#point16').offset()
+    let point16sub = $('#point16-sub').offset()
     let point17 = $('#point17').offset()
     let point18 = $('#point18').offset()
     let point19 = $('#point19').offset()
@@ -1197,13 +1227,14 @@
       {x: point15.left - ball.left ,y: point15.top - ball.top},//18
       {x: point15sub.left - ball.left ,y: point15sub.top - ball.top},//19
       {x: point16.left - ball.left ,y: point16.top - ball.top},//20
-      {x: point17.left - ball.left ,y: point17.top - ball.top},//21
-      {x: point18.left - ball.left ,y: point18.top - ball.top},//22
-      {x: point19.left - ball.left ,y: point19.top - ball.top},//23
-      {x: point20.left - ball.left ,y: point20.top - ball.top},//24
-      {x: point21.left - ball.left ,y: point21.top - ball.top},//25
-      {x: point22.left - ball.left ,y: point22.top - ball.top},//26
-      {x: point23.left - ball.left ,y: point23.top - ball.top},//27
+      {x: point16sub.left - ball.left ,y: point16sub.top - ball.top},//21
+      {x: point17.left - ball.left ,y: point17.top - ball.top},//22
+      {x: point18.left - ball.left ,y: point18.top - ball.top},//23
+      {x: point19.left - ball.left ,y: point19.top - ball.top},//24
+      {x: point20.left - ball.left ,y: point20.top - ball.top},//25
+      {x: point21.left - ball.left ,y: point21.top - ball.top},//26
+      {x: point22.left - ball.left ,y: point22.top - ball.top},//27
+      {x: point23.left - ball.left ,y: point23.top - ball.top},//28
     ]
   }
 </script>
