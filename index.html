@@ -1133,14 +1133,14 @@
             .add(TweenMax.to("#ball", 0.5, posistion[25])) //slide top - slide btm
             .add(TweenMax.to("#ball", 0.5, posistion[26])) //slide btm - blank mid1
             .add(TweenMax.to("#ball", 0.5, posistion[27])) //blank mid1 - blank mid2
-            .add(TweenMax.to("#ball", 0.5, {x: posistion[28].x, y:posistion[27].y,width: '5.97%', opacity: '0'})) //blank mid2 - logo btm 要加#ball縮小至跟底部logo一樣
+            .add(TweenMax.to("#ball", 0.5, {x: posistion[28].x, y:posistion[28].y,width: '5.97%', opacity: '0'})) //blank mid2 - logo btm 要加#ball縮小至跟底部logo一樣
     // create a scene
     new ScrollMagic.Scene({
-      duration: posistion[27].y, // the scene should last for a scroll distance of 100px
-      offset: 0 // start this scene after scrolling for 50px
+      duration: posistion[28].y,
+      offset: 0
     })
       .setTween(timeline)
-      .addTo(controller); // assign the scene to the controller
+      .addTo(controller);
   }
   function initCarosel () {
     let option = {
