@@ -81,7 +81,7 @@
   <!-- 以下全部複製貼上 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
   <style>
     .ball-wrap {
       width: 13.97%;
@@ -268,6 +268,7 @@
       font-size: 13px;
       color: #fff;
       font-family: 'Noto Sans TC', sans-serif;
+      font-weight: 300;
       padding: 4.2% 0 8% 0;
       white-space: nowrap;
       animation: marquee 20s linear infinite;
@@ -297,24 +298,19 @@
       padding-bottom: 6px;
     }
     .item-text {
-      width: 87.3%;
-    }
-    .item-text .sm {
-      display: block;
-    }
-    .item-text .md {
-      display: none;
+      width: 73%;
     }
     .item-buy {
-      display: inline-block;
+      display: flex;
       background-color: #fff;
       border-radius: 100%;
       letter-spacing: 1px;
-      padding: 1px;
       width: 24px;
       height: 24px;
+      text-decoration: none;
     }
     .item-buy-text {
+      margin: auto;
       font-size: 12px;
       color: #000;
       transform: scale(0.7);
@@ -394,7 +390,7 @@
         font-size: 12px;
         padding-top: 25px;
         letter-spacing: .2em;
-        line-height: 24px;
+        line-height: 18px;
       }
       .music {
         width: 3.6%;
@@ -489,17 +485,10 @@
         width: 46.4%;
         margin-right: 30px;
       }
-      .item-text .sm {
-        display: none;
-      }
-      .item-text .md {
-        display: block;
-      }
       .item-buy {
         letter-spacing: 2px;
-        padding: 11px 5px 10.5px 4px;
-        width: 32px;
-        height: 32px;
+        width: 40px;
+        height: 40px;
       }
       .item-buy-text {
         transform: scale(1);
@@ -510,7 +499,6 @@
       .item-buy:hover {
         border: solid 2px #fff;
         background-color: #000;
-        padding: 10px 4px 9.5px 3px;
       }
       .item-buy:hover .item-buy-text {
         color: #fff;
@@ -671,7 +659,7 @@
     }
     #point23 {
       left: 56.5%;
-      top: 14%;
+      top: 9%;
     }
   </style>
   <style>
@@ -937,8 +925,7 @@
                   <div class="menu">
                     <div class="item itemA">
                       <div class="item-text">
-                        <img class="sm" src="./assets/itemA-m.png">
-                        <img class="md" src="./assets/itemA.png">
+                        <img src="./assets/itemA.png">
                       </div>
                       <a class="item-buy" target="_blank" href="https://product.10moresocks.com/products/petalonia-binghamiae-1-to-1-socks-habonori">
                         <span class="item-buy-text">buy</span>
@@ -946,8 +933,7 @@
                     </div>
                     <div class="item itemB">
                       <div class="item-text">
-                        <img class="sm" src="./assets/itemB-m.png">
-                        <img class="md" src="./assets/itemB.png">
+                        <img src="./assets/itemB.png">
                       </div>
                       <a class="item-buy" target="_blank" href="https://product.10moresocks.com/products/symploca-hydnoides-1-half-socks-deep-pool">
                         <span class="item-buy-text">buy</span>
@@ -955,8 +941,7 @@
                     </div>
                     <div class="item itemC">
                       <div class="item-text">
-                        <img class="sm" src="./assets/itemC-m.png">
-                        <img class="md" src="./assets/itemC.png">
+                        <img src="./assets/itemC.png">
                       </div>
                       <a class="item-buy" target="_blank" href="https://product.10moresocks.com/products/gloiopeltis-tenax-3-4ths-socks-beginning-climate-of-summer-solstice">
                         <span class="item-buy-text">buy</span>
@@ -964,8 +949,7 @@
                     </div>
                     <div class="item itemD">
                       <div class="item-text">
-                        <img class="sm" src="./assets/itemD-m.png">
-                        <img class="md" src="./assets/itemD.png">
+                        <img src="./assets/itemD.png">
                       </div>
                       <a class="item-buy" target="_blank" href="https://product.10moresocks.com/products/ulva-compressa-invisible-socks-marine-terrace">
                         <span class="item-buy-text">buy</span>
@@ -973,8 +957,7 @@
                     </div>
                     <div class="item itemE">
                       <div class="item-text">
-                        <img class="sm" src="./assets/itemE-m.png">
-                        <img class="md" src="./assets/itemE.png">
+                        <img src="./assets/itemE.png">
                       </div>
                       <a class="item-buy" target="_blank" href="https://product.10moresocks.com/products/turbinaria-conoides-1-half-socks-mi-do-sol">
                         <span class="item-buy-text">buy</span>
@@ -1027,8 +1010,9 @@
                   </div>
                 </div>
                 <div class="copyright">
-                  海藻圖像提供－國立臺灣博物館、陳育賢老師<br/>
-                  特別感謝－黃淑芳老師、林綉美老師實驗室
+                  海藻圖像提供-國立臺灣博物館、陳育賢老師、University of New Hampshire Macroalgal
+                  Collection、Meise Botanic Garden Herbarium<br/>
+                  特別感謝-黃淑芳老師、林綉美老師實驗室
                 </div>
                 <div class="blank-for-mobile-scroll"></div>
               </div>
@@ -1160,7 +1144,7 @@
       autoplay:true,
       loop:true,
       dots: false,
-      autoplayTimeout: 7600,
+      autoplayTimeout: 8000,
     }
     var box1Carosel = $(".box1-carosel").owlCarousel(option);
     $('.box1-next').click(function() {
