@@ -299,6 +299,13 @@
     }
     .item-text {
       width: 87.3%;
+      height: 20px;
+      overflow: hidden;
+    }
+    .item-text img{
+      height: 100%;
+      width: auto;
+      float: right;
     }
     .item-buy {
       display: flex;
@@ -1051,7 +1058,7 @@
     let darkSectionOffset = $('.dark-section').offset()
     let darkSectionHeight = $('.dark-section').height()
     let scrollTop = $(document).scrollTop()
-    if(scrollTop < darkSectionOffset.top-50 || scrollTop > darkSectionOffset.top+darkSectionHeight) {
+    if(scrollTop < darkSectionOffset.top-25 || scrollTop > darkSectionOffset.top+darkSectionHeight) {
       if (playingIndex !== 4) return
       $('#music6').removeClass('playing')
       $('#music6')[0].pause()
@@ -1141,7 +1148,7 @@
   function initCarosel () {
     let option = {
       items:1,
-      autoplay:true,
+      autoplay:false,
       loop:true,
       dots: false,
       autoplayTimeout: 8000,
