@@ -247,7 +247,28 @@
       position: relative;
       margin: 0 -15px;
       padding: 20px 15px 72px 15px;
+      background-color: #fff;
+    }
+    .dark-section.on {
       background-color: #000;
+      animation: fade 300ms;
+    }
+    .dark-section div {
+      visibility: hidden;
+    }
+    .on div{
+      visibility: visible;
+    }
+    @keyframes fade {
+      from {
+        opacity: 1.0;
+      }
+      50% {
+        opacity: 0;
+      }
+      to {
+        opacity: 1.0;
+      }
     }
     .scroll-box {
       width: 83.8%;
@@ -1033,6 +1054,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" integrity="sha512-HzAEuXwhLxwm/Jj+5ecdjzrRVrjuh2ZeIxyT1Ln37TO5pWNMnKBuU7cfd1wvRQ/k86w1oC174Yk1T7aRlBpIcA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js" integrity="sha512-A98SmLRZISk4eIxQBeCm8k0jAcwN3A3lBx4hr7baoMpV1VpxcxlZIhi5fJIZN50sQ5RlCzx8yV+Voy2cR6x0aA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js" integrity="sha512-Ey+nIg+Ue8gUAaCNjR1KHR8nwDjWn9QXoQbynR/X+V66s6u1oqynnuRQ8zSgg5f5gBNb2Bzsu1pItCi3sPkbfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
   var playingIndex = -1
   function switchMusic(index){
@@ -1088,6 +1110,7 @@
         if(imgID.length === i) { // 當圖片全部讀取完畢就顯示載入完成，這邊可以搭配 Loading 狀態切換畫面
           console.log('圖片全部載入完成');
           initScrollMagic() //註解掉這行就可以關閉球
+          initDarksection()
         }
       });
     })
@@ -1098,12 +1121,34 @@
         }, 500)
       })
     } else {
-      $(document).scroll(()=> {
-        swithMusic6()
-      })
+      initDarksectionBgm()
     }
   })
-
+  function initDarksectionBgm() {
+    var controller = new ScrollMagic.Controller();
+	  var scene = new ScrollMagic.Scene({triggerElement: ".dark-section", duration: $('.dark-section').height()})
+					.addTo(controller)
+					// .addIndicators() 
+					.on("enter leave", function (e) {
+						console.log('關音樂')
+            if (playingIndex !== 4) return
+            $('#music6').removeClass('playing')
+            $('#music6')[0].pause()
+            $('#music6')[0].currentTime = 0
+            playingIndex = -1
+					})
+					.on("start end", function (e) {
+						console.log('播音樂')
+            if (playingIndex !== 4) switchMusic(4)
+					})
+  }
+  function initDarksection () {
+    var controller = new ScrollMagic.Controller({globalSceneOptions: {duration: $('.dark-section').height()}});
+    new ScrollMagic.Scene({triggerElement: ".plant-box"})
+            .setClassToggle(".dark-section", "on")
+            // .addIndicators()
+            .addTo(controller);
+  }
   function initScrollMagic () {
     // init controller
     var controller = new ScrollMagic.Controller();
