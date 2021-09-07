@@ -79,10 +79,16 @@
     }
   </style>
   <!-- 以下全部複製貼上 -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"></link>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"></link>
   <style>
+    .page-wrapper{
+      background-color: transparent;
+    }
+    .max-wrap {
+      padding-top: 100px;
+    }
     .ball-wrap {
       width: 13.97%;
       filter: contrast(4);
@@ -94,6 +100,7 @@
       letter-spacing: 0;
       mix-blend-mode: multiply;
       max-width: 132px;
+      min-width: auto;
     }
     .ball.r {
       background-color: #ff0000;
@@ -109,13 +116,13 @@
       width: 50%;
       padding-bottom: 50%;
     }
-    .logo {
+    .series-logo {
       padding-bottom:70px;
     }
     .logo-image {
       position: relative;
       padding-bottom: 18.3%;
-      background-image: url("./assets/logo.png");
+      background-image: url("/Uploads/images/series/202109/logo.png");
       background-size: cover;
     }
     .intro-section {
@@ -210,9 +217,11 @@
     }
     #music3 {
       top:6.8%;
+      z-index: 99;
     }
     #music4 {
-      top:38.2%
+      top:38.2%;
+      z-index: 99;
     }
     .micro-section {
       position: relative;
@@ -273,7 +282,7 @@
     .scroll-box {
       width: 83.8%;
       padding-bottom: 12.4%;
-      background-image: url('./assets//scroll-frame.png');
+      background-image: url('/Uploads/images/series/202109/scroll-frame.png');
       background-size: contain;
       background-repeat: no-repeat;
     }
@@ -292,14 +301,14 @@
       font-weight: 300;
       padding: 4.2% 0 8% 0;
       white-space: nowrap;
-      animation: marquee 20s linear infinite;
+      animation: marquee 40s linear infinite;
     }
     @keyframes marquee {
       0% {
         left: 0;
       }
       100% {
-        left: -589.61px;
+        left: -2754.66px;
       }
     }
     .plant-box {
@@ -327,6 +336,7 @@
       height: 100%;
       width: auto;
       float: right;
+      max-width: none;
     }
     .item-buy {
       display: flex;
@@ -336,6 +346,8 @@
       width: 24px;
       height: 24px;
       text-decoration: none;
+      border-bottom:none !important;
+      text-decoration: none !important;
     }
     .item-buy-text {
       margin: auto;
@@ -367,7 +379,7 @@
       position: relative;
       padding: 0 0 43px 0;
     }
-    .copyright {
+    .copyright-thanks {
       font-size: 12px;
       letter-spacing: .2em;
       line-height: 24px;
@@ -393,8 +405,9 @@
       .max-wrap {
         width: 600px;
         margin: auto;
+        padding-top: 0;
       }
-      .logo {
+      .series-logo  {
         padding-bottom:20.9%;
       }
       .glasses {
@@ -490,7 +503,7 @@
           left: 0;
         }
         100% {
-          left: -985.61px;
+          left: -4373.41px;
         }
       }
       .plant-box {
@@ -526,6 +539,7 @@
       }
       .item-buy:hover {
         border: solid 2px #fff;
+        border-bottom:solid 2px #fff !important;
         background-color: #000;
       }
       .item-buy:hover .item-buy-text {
@@ -802,7 +816,7 @@
           <div class="row">
             <div class="col-md-offset-0 col-md-12">
               <div class="max-wrap">
-                <div class="logo">
+                <div class="series-logo ">
                   <div class="logo-image">
                     <div id="ball" class="ball-wrap">
                       <div class="r ball"></div>
@@ -815,14 +829,14 @@
                   <div id="point2" class="ball-point"></div>
                   <div id="point2-sub" class="ball-point"></div>
                   <div class="glasses">
-                    <img src="./assets/glasses.png" alt="3D眼鏡">
+                    <img src="/Uploads/images/series/202109/glasses.png" alt="3D眼鏡">
                   </div>
                   <div class="intro-content">
                     <div id="point3" class="ball-point"></div>
-                    <img class="img" src="./assets/intro-circle.png">
+                    <img class="img" src="/Uploads/images/series/202109/intro-circle.png">
                     <div class="intro-text">
                       <div class="title">
-                        <img class="img" src="./assets/intro-title.png" alt="micro-微尺度，巨煉金術。">
+                        <img class="img" src="/Uploads/images/series/202109/intro-title.png" alt="micro-微尺度，巨煉金術。">
                       </div>
                       <div class="detail">
                         耗費無聊的十億年，藻製造出第一顆氧氣泡泡離開海洋，進入大氣。沒有藻，海是一片充滿鐵的綠色水池，生命現在還是宇宙塵埃。梭羅曾說：「野性蘊藏著世界的保存。」微尺度的野性，把這顆行星理解、分解，往復煉製，沒有物質是孤立的，依照守恆，物物相關。
@@ -830,9 +844,9 @@
                     </div>
                   </div>
                   <div onclick="switchMusic(0)" id="music1" class="music">
-                    <img class="music-off" src="./assets/music1-off.png" alt="music1">
-                    <img class="music-on" src="./assets/music1-on.png" alt="music1">
-                    <audio class="music-player" loop src="./assets/music1.mp3"></audio>
+                    <img class="music-off" src="/Uploads/images/series/202109/music1-off.png" alt="music1">
+                    <img class="music-on" src="/Uploads/images/series/202109/music1-on.png" alt="music1">
+                    <audio class="music-player" src="https://yuanshulu.github.io/plus10/assets/music1.m4a"></audio>
                   </div>
                 </div>
                 <div class="box1-section">
@@ -843,25 +857,25 @@
                     <div id="point6" class="ball-point"></div>
                     <div id="point7" class="ball-point"></div>
                     <div class="prev box1-prev">
-                      <img src="./assets/btn-prev.png" alt="前一張">
+                      <img src="/Uploads/images/series/202109/btn-prev.png" alt="前一張">
                     </div>
                     <div class="box">
-                      <img class="img" src="./assets/box.png">
+                      <img class="img" src="/Uploads/images/series/202109/box.png">
                       <div class="carosel box1-carosel owl-carousel owl-theme">
                         <!-- 這裡是就是輪播的地方，複製貼上就可以換了 -->
-                        <div><img src="./assets/box1-item1.gif"></div>
-                        <div><img src="./assets/box1-item2.gif"></div>
-                        <div><img src="./assets/box1-item3.gif"></div>
+                        <div><img src="/Uploads/images/series/202109/box1-item1.gif"></div>
+                        <div><img src="/Uploads/images/series/202109/box1-item2.gif"></div>
+                        <div><img src="/Uploads/images/series/202109/box1-item3.gif"></div>
                       </div>
                     </div>
                     <div class="next box1-next">
-                      <img src="./assets/btn-next.png" alt="下一張">
+                      <img src="/Uploads/images/series/202109/btn-next.png" alt="下一張">
                     </div>
                   </div>
                   <div onclick="switchMusic(1)" id="music2" class="music">
-                    <img class="music-off" src="./assets/music2-off.png" alt="music2">
-                    <img class="music-on" src="./assets/music2-on.png" alt="music2">
-                    <audio class="music-player" loop src="./assets/music2.mp3"></audio>
+                    <img class="music-off" src="/Uploads/images/series/202109/music2-off.png" alt="music2">
+                    <img class="music-on" src="/Uploads/images/series/202109/music2-on.png" alt="music2">
+                    <audio class="music-player" src="https://yuanshulu.github.io/plus10/assets/music2.m4a"></audio>
                   </div>
                 </div>
                 <div class="box2-section">
@@ -871,54 +885,54 @@
                     <div id="point10" class="ball-point"></div>
                     <div id="point11" class="ball-point"></div>
                     <div class="prev box2-prev">
-                      <img src="./assets/btn-prev.png" alt="前一張">
+                      <img src="/Uploads/images/series/202109/btn-prev.png" alt="前一張">
                     </div>
                     <div class="box">
-                      <img class="img" src="./assets/box.png">
+                      <img class="img" src="/Uploads/images/series/202109/box.png">
                       <div class="carosel box2-carosel owl-carousel owl-theme">
                         <!-- 這裡是就是輪播的地方，複製貼上就可以換了 -->
-                        <div><img src="./assets/box2-item1.gif"></div>
-                        <div><img src="./assets/box2-item2.gif"></div>
+                        <div><img src="/Uploads/images/series/202109/box2-item1.gif"></div>
+                        <div><img src="/Uploads/images/series/202109/box2-item2.gif"></div>
                       </div>
                     </div>
                     <div class="next box2-next">
-                      <img src="./assets/btn-next.png" alt="下一張">
+                      <img src="/Uploads/images/series/202109/btn-next.png" alt="下一張">
                     </div>
                   </div>
                 </div>
                 <div class="micro-section">
                   <div class="glasses">
-                    <img src="./assets/glasses.png" alt="3D眼鏡">
+                    <img src="/Uploads/images/series/202109/glasses.png" alt="3D眼鏡">
                   </div>
                   <div onclick="switchMusic(2)" id="music3" class="music">
-                    <img class="music-off" src="./assets//music3-off.png" alt="music3">
-                    <img class="music-on" src="./assets//music3-on.png" alt="music3">
-                    <audio class="music-player" loop src="./assets/music3.mp3"></audio>
+                    <img class="music-off" src="/Uploads/images/series/202109//music3-off.png" alt="music3">
+                    <img class="music-on" src="/Uploads/images/series/202109//music3-on.png" alt="music3">
+                    <audio class="music-player" src="https://yuanshulu.github.io/plus10/assets/music3.mp3"></audio>
                   </div>
                   <div onclick="switchMusic(3)" id="music4" class="music">
-                    <img class="music-off" src="./assets//music4-off.png" alt="music4">
-                    <img class="music-on" src="./assets//music4-on.png" alt="music4">
-                    <audio class="music-player" loop src="./assets/music4.mp3"></audio>
+                    <img class="music-off" src="/Uploads/images/series/202109//music4-off.png" alt="music4">
+                    <img class="music-on" src="/Uploads/images/series/202109//music4-on.png" alt="music4">
+                    <audio class="music-player" src="https://yuanshulu.github.io/plus10/assets/music4.m4a"></audio>
                   </div>
                   <div class="x10 micro">
                     <div id="point12" class="ball-point"></div>
                     <div id="point12-sub" class="ball-point"></div>
                     <div id="point13" class="ball-point"></div>
                     <div class="micro-text">
-                      <img class="img" src="./assets/micro10x-title-trans.png" alt="大傘藻">
+                      <img class="img" src="/Uploads/images/series/202109/micro10x-title-trans.png" alt="大傘藻">
                     </div>
                     <div class="micro-pic">
-                      <img class="img" src="./assets/micro10x-pic.gif" alt="大傘藻">
+                      <img class="img" src="/Uploads/images/series/202109/micro10x-pic.gif" alt="大傘藻">
                     </div>
                   </div>
                   <div class="x50 micro">
                     <div id="point14" class="ball-point"></div>
                     <div id="point14-sub" class="ball-point"></div>
                     <div class="micro-text">
-                      <img class="img" src="./assets/micro50x-title-trans.png" alt="蘚狀束藻">
+                      <img class="img" src="/Uploads/images/series/202109/micro50x-title-trans.png" alt="蘚狀束藻">
                     </div>
                     <div class="micro-pic">
-                      <img class="img" src="./assets/micro50x-pic.gif" alt="蘚狀束藻">
+                      <img class="img" src="/Uploads/images/series/202109/micro50x-pic.gif" alt="蘚狀束藻">
                     </div>
                   </div>
                   <div class="x100 micro">
@@ -927,10 +941,10 @@
                     <div id="point16" class="ball-point"></div>
                     <div id="point16-sub" class="ball-point"></div>
                     <div class="micro-text">
-                      <img class="img" src="./assets/micro100x-title-trans.png" alt="頭髮菜">
+                      <img class="img" src="/Uploads/images/series/202109/micro100x-title-trans.png" alt="頭髮菜">
                     </div>
                     <div class="micro-pic">
-                      <img class="img" src="./assets/micro100x-pic.gif" alt="頭髮菜">
+                      <img class="img" src="/Uploads/images/series/202109/micro100x-pic.gif" alt="頭髮菜">
                     </div>
                   </div>
                 </div>
@@ -940,20 +954,25 @@
                   <div class="scroll-box">
                     <div class="scroll-text">
                       <div class="text">
-                        「野性蘊藏著世界的保存。」&ensp;&ensp;「沒有物質是孤立的，依照守恆，物物相關。」&ensp;&ensp;「野性蘊藏著世界的保存。」&ensp;&ensp;「沒有物質是孤立的，依照守恆，物物相關。」&ensp;&ensp;
+                        簡潔是智慧的靈魂,冗長是膚淺的藻飾。——莎士比亞&nbsp; &nbsp; Each living creature must be looked at
+                        as a microcosm--a little universe, formed of a host of self-propagating organisms, inconceivably
+                        minute and as numerous as the stars in heaven.——Charles Darwin&nbsp; &nbsp; 大海刺傷了他有限的身體,卻淹沒了他靈魂的無限。——赫爾曼·梅爾維爾&nbsp; &nbsp; 
+                        簡潔是智慧的靈魂,冗長是膚淺的藻飾。——莎士比亞&nbsp; &nbsp; Each living creature must be looked at
+                        as a microcosm--a little universe, formed of a host of self-propagating organisms, inconceivably
+                        minute and as numerous as the stars in heaven.——Charles Darwin&nbsp; &nbsp; 大海刺傷了他有限的身體,卻淹沒了他靈魂的無限。——赫爾曼·梅爾維爾&nbsp; &nbsp; 
                       </div>
                     </div>
                   </div>
                   <div class="plant-box">
-                    <img class="img" src="./assets/plant.gif">
+                    <img class="img" src="/Uploads/images/series/202109/plant.gif">
                   </div>
                   <div class="model-box">
-                    <img class="img" src="./assets/model.gif">
+                    <img class="img" src="/Uploads/images/series/202109/model.gif">
                   </div>
                   <div class="menu">
                     <div class="item itemA">
                       <div class="item-text">
-                        <img src="./assets/itemA.png">
+                        <img src="/Uploads/images/series/202109/itemA.png">
                       </div>
                       <a class="item-buy" target="_blank" href="https://product.10moresocks.com/products/petalonia-binghamiae-1-to-1-socks-habonori">
                         <span class="item-buy-text">buy</span>
@@ -961,7 +980,7 @@
                     </div>
                     <div class="item itemB">
                       <div class="item-text">
-                        <img src="./assets/itemB.png">
+                        <img src="/Uploads/images/series/202109/itemB.png">
                       </div>
                       <a class="item-buy" target="_blank" href="https://product.10moresocks.com/products/symploca-hydnoides-1-half-socks-deep-pool">
                         <span class="item-buy-text">buy</span>
@@ -969,7 +988,7 @@
                     </div>
                     <div class="item itemC">
                       <div class="item-text">
-                        <img src="./assets/itemC.png">
+                        <img src="/Uploads/images/series/202109/itemC.png">
                       </div>
                       <a class="item-buy" target="_blank" href="https://product.10moresocks.com/products/gloiopeltis-tenax-3-4ths-socks-beginning-climate-of-summer-solstice">
                         <span class="item-buy-text">buy</span>
@@ -977,7 +996,7 @@
                     </div>
                     <div class="item itemD">
                       <div class="item-text">
-                        <img src="./assets/itemD.png">
+                        <img src="/Uploads/images/series/202109/itemD.png">
                       </div>
                       <a class="item-buy" target="_blank" href="https://product.10moresocks.com/products/ulva-compressa-invisible-socks-marine-terrace">
                         <span class="item-buy-text">buy</span>
@@ -985,14 +1004,14 @@
                     </div>
                     <div class="item itemE">
                       <div class="item-text">
-                        <img src="./assets/itemE.png">
+                        <img src="/Uploads/images/series/202109/itemE.png">
                       </div>
                       <a class="item-buy" target="_blank" href="https://product.10moresocks.com/products/turbinaria-conoides-1-half-socks-mi-do-sol">
                         <span class="item-buy-text">buy</span>
                       </a>
                     </div>
                   </div>
-                  <audio class="music-player music" id="music6" loop src="./assets/music6.m4a"></audio>
+                  <audio class="music-player music" id="music6" loop src="https://yuanshulu.github.io/plus10/assets/music6.m4a"></audio>
                 </div>
                 <div class="slide-section">
                   <div id="point19" class="ball-point"></div>
@@ -1001,43 +1020,43 @@
                   <div id="point22" class="ball-point"></div>
                   <div class="slide-container">
                     <div class="prev slides-prev">
-                      <img src="./assets/btn-prev.png" alt="前一張">
+                      <img src="/Uploads/images/series/202109/btn-prev.png" alt="前一張">
                     </div>
                     <div class="slide">
-                      <img class="img" src="./assets/slide-frame.png">
+                      <img class="img" src="/Uploads/images/series/202109/slide-frame.png">
                       <div class="slides owl-carousel owl-theme">
                         <!-- 這裡是就是輪播的地方，複製貼上就可以換了 -->
-                        <img src="./assets/watcher1.gif">
-                        <img src="./assets/watcher2.gif">
-                        <img src="./assets/watcher3.gif">
-                        <img src="./assets/watcher4.gif">
+                        <img src="/Uploads/images/series/202109/watcher1.gif">
+                        <img src="/Uploads/images/series/202109/watcher2.gif">
+                        <img src="/Uploads/images/series/202109/watcher3.gif">
+                        <img src="/Uploads/images/series/202109/watcher4.gif">
                       </div>
                     </div>
                     <div class="next slides-next">
-                      <img src="./assets/btn-next.png" alt="下一張">
+                      <img src="/Uploads/images/series/202109/btn-next.png" alt="下一張">
                     </div>
                   </div>
                 </div>
                 <div class="bottom-section">
                   <div class="glasses">
-                    <img src="./assets/glasses.png" alt="3D眼鏡">
+                    <img src="/Uploads/images/series/202109/glasses.png" alt="3D眼鏡">
                   </div>
                   <div class="logo-wrap">
                     <div class="logo-bottom">
                       <div id="point23" class="ball-point"></div>
-                      <img class="img" src="./assets/logo-m.png">
+                      <img class="img" src="/Uploads/images/series/202109/logo-m.png">
                     </div>
                     <div class="sign">
-                      <img class="img" src="./assets/sign.gif">
+                      <img class="img" src="/Uploads/images/series/202109/sign.gif">
                     </div>
                   </div>
                   <div onclick="switchMusic(5)" id="music5" class="music">
-                    <img class="music-off" src="./assets//music5-off.png" alt="music5">
-                    <img class="music-on" src="./assets//music5-on.png" alt="music5">
-                    <audio class="music-player" loop src="./assets/music5.mp3"></audio>
+                    <img class="music-off" src="/Uploads/images/series/202109//music5-off.png" alt="music5">
+                    <img class="music-on" src="/Uploads/images/series/202109//music5-on.png" alt="music5">
+                    <audio class="music-player" src="https://yuanshulu.github.io/plus10/assets/music5.m4a"></audio>
                   </div>
                 </div>
-                <div class="copyright">
+                <div class="copyright-thanks">
                   海藻圖像提供-國立臺灣博物館、陳育賢老師、University of New Hampshire Macroalgal
                   Collection、Meise Botanic Garden Herbarium<br/>
                   特別感謝-黃淑芳老師、林綉美老師實驗室
@@ -1051,10 +1070,12 @@
     </div>
   </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js" integrity="sha512-HzAEuXwhLxwm/Jj+5ecdjzrRVrjuh2ZeIxyT1Ln37TO5pWNMnKBuU7cfd1wvRQ/k86w1oC174Yk1T7aRlBpIcA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js" integrity="sha512-A98SmLRZISk4eIxQBeCm8k0jAcwN3A3lBx4hr7baoMpV1VpxcxlZIhi5fJIZN50sQ5RlCzx8yV+Voy2cR6x0aA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js" integrity="sha512-Ey+nIg+Ue8gUAaCNjR1KHR8nwDjWn9QXoQbynR/X+V66s6u1oqynnuRQ8zSgg5f5gBNb2Bzsu1pItCi3sPkbfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.1/TweenMax.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script> -->
 <script>
   var playingIndex = -1
   function switchMusic(index){
@@ -1099,34 +1120,29 @@
   }
   $(document).ready(function() {
     initCarosel()
-    const imgID = document.querySelectorAll('.img');
-    let i = 0;
-    imgID.forEach((item, index) => {
-      const img = new Image();
-      img.src = item.src;
-      
-      img.addEventListener("load", () => {
-        i += 1; // 讀取完畢就 + 1
-        if(imgID.length === i) { // 當圖片全部讀取完畢就顯示載入完成，這邊可以搭配 Loading 狀態切換畫面
-          console.log('圖片全部載入完成');
-          initScrollMagic() //註解掉這行就可以關閉球
-          initDarksection()
-        }
-      });
-    })
+    initMusic()
+    window.onload = () => {
+      initScrollMagic() //註解掉這行就可以關閉球
+      initDarksection()
+      if(!isMobile()) initDarksectionBgm()
+    }
     if(isMobile()) {
       $(document).on('touchstart', ()=> {
         setTimeout(()=> {
           swithMusic6()
         }, 500)
       })
-    } else {
-      initDarksectionBgm()
     }
   })
+  function initMusic() {
+    $('.music-player').on('ended', ()=> {
+      $(`.music:eq(${playingIndex})`).toggleClass('playing')
+      playingIndex = -1
+    })
+  }
   function initDarksectionBgm() {
     var controller = new ScrollMagic.Controller();
-	  var scene = new ScrollMagic.Scene({triggerElement: ".dark-section", duration: $('.dark-section').height()})
+	  var scene = new ScrollMagic.Scene({triggerElement: ".dark-section", duration: $('#point19').offset().top - $('#point16').offset().top})
 					.addTo(controller)
 					// .addIndicators() 
 					.on("enter leave", function (e) {
@@ -1143,7 +1159,7 @@
 					})
   }
   function initDarksection () {
-    var controller = new ScrollMagic.Controller({globalSceneOptions: {duration: $('.dark-section').height()}});
+    var controller = new ScrollMagic.Controller({duration: $('.dark-section').height()});
     new ScrollMagic.Scene({triggerElement: ".plant-box"})
             .setClassToggle(".dark-section", "on")
             // .addIndicators()
@@ -1157,7 +1173,7 @@
     // todo duration, TwennMax time 待調整
     // .add(TweenMax.to(要動的物件, 執行時間(佔據捲軸滾多少), 要前往的目的地))
     timeline
-            .add(TweenMax.to("#ball", 1, posistion[0])) //logo - intro
+            .add(TweenMax.to("#ball", 1,  {x: posistion[0].x, y:posistion[0].y, 'min-width': '48px'})) //logo - intro
             .add(TweenMax.to("#ball", 1, {bezier:{curviness:1.25,values:[posistion[1],posistion[2],posistion[3]]}}))
             .add(TweenMax.to("#ball", 0.5, posistion[4]))//intro - box1
             .add(TweenMax.to("#ball", 0.1, posistion[5])) //box1 - box1 corner1
@@ -1181,7 +1197,7 @@
             .add(TweenMax.to("#ball", 0.5, posistion[25])) //slide top - slide btm
             .add(TweenMax.to("#ball", 0.5, posistion[26])) //slide btm - blank mid1
             .add(TweenMax.to("#ball", 0.5, posistion[27])) //blank mid1 - blank mid2
-            .add(TweenMax.to("#ball", 0.5, {x: posistion[28].x, y:posistion[28].y,width: '5.97%', opacity: '0'})) //blank mid2 - logo btm 要加#ball縮小至跟底部logo一樣
+            .add(TweenMax.to("#ball", 0.5, {x: posistion[28].x, y:posistion[28].y,width: '5.97%', opacity: '0', 'min-width': 'auto'})) //blank mid2 - logo btm 要加#ball縮小至跟底部logo一樣
     // create a scene
     new ScrollMagic.Scene({
       duration: posistion[28].y,
